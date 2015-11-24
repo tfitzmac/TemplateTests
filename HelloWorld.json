@@ -6,8 +6,8 @@
 	"resources": [],
 	"outputs": {
 		"result": {
-			"value": "[deployment().properties.templateLink.uri]",
-			"type" : "string"
+			"value": "[deployment()]",
+			"type" : "object"
 		}
 	}
 }
