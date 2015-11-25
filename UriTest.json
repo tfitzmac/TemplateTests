@@ -6,7 +6,7 @@
 	"resources": [],
 	"outputs": {
 		"result": {
-			"value": "[uri(''http://contoso.com/resources/maintemplate.json', 'templateName.json')]",
+			"value": "[uri('http://contoso.com/resources/maintemplate.json', 'templateName.json')]",
 			"type" : "string"
 		}
 	}
