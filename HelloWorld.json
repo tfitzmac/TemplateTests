@@ -6,8 +6,8 @@
 	"resources": [],
 	"outputs": {
 		"result": {
-			"value": "[deployment()]",
-			"type" : "object"
+			"value": "Hello World",
+			"type" : "string"
 		}
 	}
 }
