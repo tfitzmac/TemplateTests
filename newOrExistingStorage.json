@@ -14,7 +14,7 @@
         }
     },
     "variables": {
-        "templatelink": "[concat('https://raw.githubusercontent.com/rjmax/ArmExamples/master/',parameters('newOrExisting'),'StorageAccount.json')]"
+        "templatelink": "[concat('https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/',parameters('newOrExisting'),'StorageAccount.json')]"
     },
     "resources": [
         {
