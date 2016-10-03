@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "numberofStorage": { "type": "int" }
+    },
+    "resources": [
+      {
+        "apiVersion": "2015-01-01",
+        "name": "nestedTemplate0",
+        "type": "Microsoft.Resources/deployments",
+        "properties": {
+          "mode": "incremental",
+          "templateLink": {
+            "uri": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/storageonly.json",
+            "contentVersion": "1.0.0.0"
+          },
+          "parameters": {
+            "indexValue": {"value": 0}
+          }
+        }
+      },
+      {
+        "apiVersion": "2015-01-01",
+        "name": "[concat('nestedTemplate', copyIndex(1))]",
+        "type": "Microsoft.Resources/deployments",
+        "copy": {
+          "name": "storagecopy",
+          "count": "[sub(parameters('numberofStorage'), 1)]"
+        },
+        "properties": {
+          "mode": "incremental",
+          "templateLink": {
+            "uri": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/storageonly.json",
+            "contentVersion": "1.0.0.0"
+          },
+          "parameters": {
+            "indexValue": {"value": "[copyIndex(1)]"},
+            "blobURIs": {"value": "[reference(concat('nestedTemplate', copyIndex())).outputs.result.value]"}
+          }
+        }
+      }
+    ],
+    "outputs": {
+      "result": {
+        "type": "object",
+        "value": "[reference(concat('nestedTemplate', sub(parameters('numberofStorage'), 1))).outputs.result]"
+      }
+    }
+}
