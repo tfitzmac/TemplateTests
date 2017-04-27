@@ -27,7 +27,7 @@
   },
   "variables": {
     "storageName": "[concat(parameters('storageNamePrefix'), uniqueString(resourceGroup().id))]"
-  }
+  },
   "resources": [
     {
       "name": "[variables('storageName')]",
