@@ -1,0 +1,27 @@
+{
+  "parameters": {
+    "storageAccounts_mcyzaljiv7qncstandardsa_name": {
+      "type": "String",
+      "defaultValue": null
+    }
+  },
+  "variables": {},
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "resources": [
+    {
+      "tags": {},
+      "dependsOn": [],
+      "apiVersion": "2016-01-01",
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "kind": "Storage",
+      "type": "Microsoft.Storage/storageAccounts",
+      "location": "centralus",
+      "name": "[parameters('storageAccounts_mcyzaljiv7qncstandardsa_name')]",
+      "properties": {}
+    }
+  ],
+  "contentVersion": "1.0.0.0"
+}
