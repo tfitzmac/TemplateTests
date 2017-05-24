@@ -14,11 +14,12 @@
         }
     },
     "variables": {
-        "templatelink": "[concat('https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/',parameters('newOrExisting'),'StorageAccount.json')]"
+        "templatelink": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/newStorageAccount.json"
     },
     "resources": [
         {
-            "apiVersion": "2015-01-01",
+            "condition": "[equals(parameters('newOrExisting'),'new')]",
+            "apiVersion": "2017-05-10",
             "name": "nestedTemplate",
             "type": "Microsoft.Resources/deployments",
             "properties": {
