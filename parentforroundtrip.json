@@ -32,5 +32,10 @@
         }
       }
     }],
-    "outputs": {}
+    "outputs": {
+      "returnedValue": {
+        "type": "string",
+        "value": "[reference('nestedTemplate').outputs.parameterOutput.value]"
+      }
+    }
 }
