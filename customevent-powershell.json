@@ -1,0 +1,12 @@
+[
+    {
+        "id": "'"(Get-Random 99999)"'",
+        "eventType": "recordInserted",
+        "subject": "myapp/vehicles/motorcycles",
+        "eventTime": "'"(Get-Date -Format u)"'",
+        "data":{
+            "make": "Ducati",
+            "model": "Monster"
+        }
+    }
+]
