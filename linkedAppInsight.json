@@ -1,0 +1,37 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appInsights01Name": {
+            "defaultValue": "",
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2015-05-01",
+            "name": "[parameters('appInsights01Name')]",
+            "type": "Microsoft.Insights/components",
+            "kind": "web",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "test_App_Insights"
+            },
+            "properties": {
+                "ApplicationId": "[parameters('appInsights01Name')]"
+            },
+            "dependsOn": []
+        }
+    ],
+    "outputs": {
+        "AppInsights01ResourceID": {
+            "value": "[resourceId('Microsoft.Insights/components', parameters('appInsights01Name'))]",
+            "type": "string"
+        },
+        "AppInsights01InstrumentationKey": {
+            "value": "[reference(parameters('appInsights01Name')).InstrumentationKey]",
+            "type": "string"
+        }
+    }
+}
