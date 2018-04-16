@@ -2,7 +2,10 @@
   "parameters": {
     "storageAccounts_mcyzaljiv7qncstandardsa_name": {
       "type": "String",
-      "defaultValue": null
+      "defaultValue": null,
+      "metadata": {
+          "description": "Test."
+      }
     }
   },
   "variables": {},
