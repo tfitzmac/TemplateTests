@@ -4,7 +4,11 @@
     "parameters": {
         "appInsights01Name": {
             "defaultValue": "",
-            "type": "string"
+            "type": "string",
+            "metadata": {
+                "description": "Test"
+            }
+
         }
     },
     "variables": {},
