@@ -1,0 +1,94 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate1",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "group1",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/storagefirsttemplate.json"
+                },
+                "parameters": {}
+            }
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate2",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "group2",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/storagefirsttemplate.json"
+                },
+                "parameters": {}
+            }
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate3",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "group3",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/storagefirsttemplate.json"
+                },
+                "parameters": {}
+            }
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate4",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "group4",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/storagefirsttemplate.json"
+                },
+                "parameters": {}
+            }
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate5",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "group5",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/storagefirsttemplate.json"
+                },
+                "parameters": {}
+            }
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate6",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "group6",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://raw.githubusercontent.com/tfitzmac/TemplateTests/master/storagefirsttemplate.json"
+                },
+                "parameters": {}
+            }
+        }
+    ],
+    "outputs": {
+    }
+}
