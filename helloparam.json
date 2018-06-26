@@ -10,7 +10,7 @@
 	"resources": [],
 	"outputs": {
 		"result": {
-			"value": "[concat('Hello World', parameters('passedin'))]",
+			"value": "[concat('Hello World ', parameters('passedin'))]",
 			"type" : "string"
 		}
 	}
