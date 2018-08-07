@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "policyID": {
+            "type": "string"
+        },
+        "policyName": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/policyAssignments",
+            "name": "[parameters('policyName')]",
+            "apiVersion": "2018-03-01",
+            "properties": {
+                "scope": "[subscription().id]",
+                "policyDefinitionId": "[resourceId('Microsoft.Authorization/policyDefinitions', parameters('policyID'))]"
+            }
+        }
+    ]
+}
