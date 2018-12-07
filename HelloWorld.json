@@ -5,7 +5,7 @@
 	"variables": {},
 	"resources": [],
 	"outputs": {
-		"result-one": {
+		"result_one": {
 			"value": "Hello World",
 			"type" : "string"
 		}
