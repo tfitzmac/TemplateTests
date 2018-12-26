@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "dnsZoneName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the DNS zone."
+            }
+        },
+        "cnameName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name for the CNAME."
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/dnszones",
+            "name": "[parameters('dnsZoneName')]",
+            "apiVersion": "2018-05-01",
+            "location": "global",
+            "properties": {
+                "zoneType": "Public"
+            },
+            "resources": [
+                {
+                    "type": "CNAME",
+                    "name": "[parameters('cnameName')]",
+                    "apiVersion": "2018-05-01",
+                    "scale": null,
+                    "properties": {
+                        "TTL": 3600,
+                        "targetResource": {}
+                    },
+                    "dependsOn": [
+                        "[parameters('dnsZoneName')]"
+                    ]
+                }
+            ]
+        }
+    ]
+}
