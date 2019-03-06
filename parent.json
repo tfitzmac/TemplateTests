@@ -20,7 +20,7 @@
     "outputs": {
         "messageFromLinkedTemplate": {
             "type": "string",
-            "value": "[reference('linkedTemplate').outputs.result-one.value]"
+            "value": "[reference('linkedTemplate').outputs.resultone.value]"
         }
     }
 }
