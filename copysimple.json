@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storagecount": {
+            "type": "int",
+            "defaultValue": 2
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2019-04-01",
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[concat('tfstore0606', copyIndex())]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "Storage",
+            "properties": {},
+            "copy": {
+                "name": "storagecopy",
+                "count": "[parameters('storagecount')]"
+            }
+        }
+    ],
+    "outputs": {}
+}
