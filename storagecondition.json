@@ -1,0 +1,36 @@
+{ 
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#", 
+    "contentVersion": "1.0.0.0", 
+    "parameters": {
+        "storageName": {
+            "type": "string",
+            "maxLength": 24
+        },
+        "storageSKU": { 
+            "type": "string", 
+            "defaultValue": "Standard_GRS", 
+            "allowedValues": [ 
+                "Standard_LRS", 
+                "Standard_ZRS", 
+                "Standard_GRS" 
+            ] 
+        } 
+    },
+    "resources": [
+        { 
+            "condition": false,
+            "type": "Microsoft.Storage/storageAccounts", 
+            "apiVersion": "2019-04-01", 
+            "name": "[parameters('storageName')]", 
+            "location": "East US", 
+            "sku": { 
+                "name": "[parameters('storageSKU')]" 
+            }, 
+            "kind": "StorageV2", 
+            "properties": { 
+                "supportsHttpsTrafficOnly": true,
+                "customDomain": "[reference(concat('Microsoft.Network/publicIPAddresses/', parameters('storageName')), '2016-03-30').dnsSettings.fqdn]"
+            } 
+        } 
+    ] 
+} 
