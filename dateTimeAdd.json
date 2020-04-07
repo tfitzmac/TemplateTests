@@ -5,20 +5,32 @@
         "baseTime":{
             "type":"string",
             "defaultValue": "[utcNow('u')]"
-        }
+        },
+        "add3Years": {
+            "defaultValue": "[dateTimeAdd('2020-04-07', 'P3Y') ]",
+            "type": "string"
+        },
+        "subtract9Days": {
+            "defaultValue": "[dateTimeAdd('2020-04-07', '-P9D') ]",
+            "type": "string"
+        },
+        "add1Hour": {
+            "defaultValue": "[dateTimeAdd('2020-04-07', 'PT1H') ]",
+            "type": "string"
+        },
     },
     "resources": [],
     "outputs": {
         "add3Years": {
-            "value": "[dateTimeAdd('2020-04-07', 'P3Y') ]",
+            "value": "[parameters('add3Years')]",
             "type": "string"
         },
         "subtract9Days": {
-            "value": "[dateTimeAdd('2020-04-07', '-P9D') ]",
+            "value": "[parameters('subtract9Days')]",
             "type": "string"
         },
         "add1Hour": {
-            "value": "[dateTimeAdd('2020-04-07', 'PT1H') ]",
+            "value": "[parameters('add1Hour')]",
             "type": "string"
         },
     }
