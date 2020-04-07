@@ -10,15 +10,15 @@
     "resources": [],
     "outputs": {
         "add3Years": {
-            "value": "[dateTimeAdd(parameters('baseTime'), 'P3Y') ]",
+            "value": "[dateTimeAdd('2020-04-07', 'P3Y') ]",
             "type": "string"
         },
         "subtract9Days": {
-            "value": "[dateTimeAdd(parameters('baseTime'), '-P9D') ]",
+            "value": "[dateTimeAdd('2020-04-07', '-P9D') ]",
             "type": "string"
         },
         "add1Hour": {
-            "value": "[dateTimeAdd(parameters('baseTime'), 'PT1H') ]",
+            "value": "[dateTimeAdd('2020-04-07', 'PT1H') ]",
             "type": "string"
         },
     }
