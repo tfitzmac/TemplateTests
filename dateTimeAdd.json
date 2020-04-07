@@ -4,7 +4,7 @@
     "parameters":{
         "startTime":{
             "type":"string",
-            "defaultValue": "[dateTimeAdd(utcNow('u'), 'x')]"
+            "defaultValue": "[dateTimeAdd(utcNow('u'))]"
         }
     },
     "resources": [],
