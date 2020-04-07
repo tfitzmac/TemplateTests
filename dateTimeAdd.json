@@ -7,15 +7,15 @@
             "defaultValue": "[utcNow('u')]"
         },
         "add3Years": {
-            "defaultValue": "[dateTimeAdd('2020-04-07', 'P3Y') ]",
+            "defaultValue": "[dateTimeAdd(utcNow('u'), 'P3Y') ]",
             "type": "string"
         },
         "subtract9Days": {
-            "defaultValue": "[dateTimeAdd('2020-04-07', '-P9D') ]",
+            "defaultValue": "[dateTimeAdd(utcNow('u'), '-P9D') ]",
             "type": "string"
         },
         "add1Hour": {
-            "defaultValue": "[dateTimeAdd('2020-04-07', 'PT1H') ]",
+            "defaultValue": "[dateTimeAdd(utcNow('u'), 'PT1H') ]",
             "type": "string"
         },
     },
