@@ -5,32 +5,25 @@
         "baseTime":{
             "type":"string",
             "defaultValue": "[utcNow('u')]"
-        },
-        "add3Years": {
-            "defaultValue": "[dateTimeAdd(utcNow('u'), 'P3Y') ]",
-            "type": "string"
-        },
-        "subtract9Days": {
-            "defaultValue": "[dateTimeAdd(utcNow('u'), '-P9D') ]",
-            "type": "string"
-        },
-        "add1Hour": {
-            "defaultValue": "[dateTimeAdd(utcNow('u'), 'PT1H') ]",
-            "type": "string"
-        },
+        }
+    },
+    "variables": {
+        "add3Years": "[dateTimeAdd(parameters('baseTime'), 'P3Y')]",
+        "subtract9Days": "[dateTimeAdd(parameters('baseTime'), '-P9D')]",
+        "add1Hour": "[dateTimeAdd(parameters('baseTime'), 'PT1H')]"
     },
     "resources": [],
     "outputs": {
         "add3Years": {
-            "value": "[parameters('add3Years')]",
+            "value": "[variables('add3Years')]",
             "type": "string"
         },
         "subtract9Days": {
-            "value": "[parameters('subtract9Days')]",
+            "value": "[variables('subtract9Days')]",
             "type": "string"
         },
         "add1Hour": {
-            "value": "[parameters('add1Hour')]",
+            "value": "[variables('add1Hour')]",
             "type": "string"
         },
     }
