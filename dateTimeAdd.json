@@ -2,16 +2,24 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters":{
-        "startTime":{
+        "baseTime":{
             "type":"string",
-            "defaultValue": "[dateTimeAdd(utcNow('u'))]"
+            "defaultValue": "[utcNow('u')]"
         }
     },
     "resources": [],
     "outputs": {
-        "test": {
-            "value": "[parameters('startTime')]",
+        "add3Years": {
+            "value": "[dateTimeAdd(parameters('baseTime'), 'P3Y') ]",
             "type": "string"
-        }
+        },
+        "subtract9Days": {
+            "value": "[dateTimeAdd(parameters('baseTime'), '-P9D') ]",
+            "type": "string"
+        },
+        "add1Hour": {
+            "value": "[dateTimeAdd(parameters('baseTime'), 'PT1H') ]",
+            "type": "string"
+        },
     }
 }
