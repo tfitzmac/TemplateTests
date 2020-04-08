@@ -19,6 +19,7 @@
         }
     },
     "variables": {
+        "startTime": "[dateTimeAdd(parameters('baseTime'), 'PT1H')]"
     },
     "resources": [
         {
@@ -30,7 +31,7 @@
             },
             "properties": {
                 "description": "Demo Scheduler",
-                "startTime": "[dateTimeAdd(parameters('baseTime'), 'PT1H') ]",
+                "startTime": "[variables('startTime')]",
                 "isEnabled": "true",
                 "interval": 1,
                 "frequency": "hour"
