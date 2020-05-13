@@ -1,0 +1,65 @@
+{
+    "resourceType": "Microsoft.Storage/storageAccounts",
+    "apiVersions": [
+        {
+            "version": "latest",
+            "url": "https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts",
+            "subheaders": [
+                "Sku",
+                "Identity",
+                "StorageAccountPropertiesCreateParameters",
+                "CustomDomain",
+                "Encryption",
+                "NetworkRuleSet",
+                "AzureFilesIdentityBasedAuthentication",
+                "RoutingPreference",
+                "EncryptionServices",
+                "KeyVaultProperties",
+                "VirtualNetworkRule",
+                "IPRule",
+                "ActiveDirectoryProperties",
+                "EncryptionService"
+            ]
+        },
+        {
+            "version": "2019-06-01",
+            "url": "https://docs.microsoft.com/azure/templates/microsoft.storage/2019-06-01/storageaccounts",
+            "subheaders": [
+                "Sku",
+                "Identity",
+                "StorageAccountPropertiesCreateParameters",
+                "CustomDomain",
+                "Encryption",
+                "NetworkRuleSet",
+                "AzureFilesIdentityBasedAuthentication",
+                "RoutingPreference",
+                "EncryptionServices",
+                "KeyVaultProperties",
+                "VirtualNetworkRule",
+                "IPRule",
+                "ActiveDirectoryProperties",
+                "EncryptionService"
+            ]
+        },
+        {
+            "version": "2019-04-01",
+            "url": "https://docs.microsoft.com/azure/templates/microsoft.storage/2019-04-01/storageaccounts",
+            "subheaders": [
+                "Sku",
+                "Identity",
+                "StorageAccountPropertiesCreateParameters",
+                "Restriction",
+                "CustomDomain",
+                "Encryption",
+                "NetworkRuleSet",
+                "AzureFilesIdentityBasedAuthentication",
+                "EncryptionServices",
+                "KeyVaultProperties",
+                "VirtualNetworkRule",
+                "IPRule",
+                "ActiveDirectoryProperties",
+                "EncryptionService"
+            ]
+        }
+    ]
+}
