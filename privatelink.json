@@ -23,7 +23,7 @@
                     }
                 ],
                 "subnet": {
-                    "id": "[resourceId('vnetgroup','Microsoft.Network/virtualNetwork/subnets', 'default' )]"
+                    "id": "[resourceId('vnetgroup','Microsoft.Network/virtualNetwork/subnets', 'vnet1', 'default' )]"
                 }
             }
         }
