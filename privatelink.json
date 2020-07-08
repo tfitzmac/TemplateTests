@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/privateEndpoints",
+            "apiVersion": "2020-04-01",
+            "name": "myPL1",
+            "location": "eastus",
+            "properties": {
+                "privateLinkServiceConnections": [
+                    {
+                        "properties": {
+                            "privateLinkServiceId": "[resourceId('testrg', 'Microsoft.Authorization/resourceManagementPrivateLinks', 'myRMPL' )]",
+                            "groupIds": [
+                                "ResourceManagement"
+                            ],
+                            "requestMessage": "Please approve my connection."
+                        }
+                    }
+                ],
+                "subnet": {
+                    "id": "[resourceId('vnetgroup','Microsoft.Network/virtualNetwork/subnets', 'default' )]"
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}
