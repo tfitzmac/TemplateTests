@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mgName": {
+            "type": "string",
+            "defaultValue": "tomtest1"
+        }
+    },
+    "variables": {
+        "mgId": "[concat('Microsoft.Management/managementGroups/', parameters('mgName'))]"
+    },
+    "resources": [
+        {
+            "name": "nested",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "scope": "[variables('mgId')]",
+            "location": "eastus",
+            "properties": {
+                "expressionEvaluationOptions": {
+                    "scope": "inner"
+                },
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": [],
+                    "outputs": {
+                        "deployed": {
+                            "type": "string",
+                            "value": "deployed to sub mg"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "innerOutput": {
+            "type": "string",
+            "value": "[reference('nested').outputs.deployed.value]"
+        }
+    }
+}
