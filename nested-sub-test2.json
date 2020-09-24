@@ -13,7 +13,7 @@
             "name": "nested",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-06-01",
-            "scope": "[concat('subscriptions/', parameters('subID'))]",
+            "scope": "[concat('/subscriptions/', parameters('subID'))]",
             "location": "eastus",
             "properties": {
                 "expressionEvaluationOptions": {
