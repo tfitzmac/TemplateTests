@@ -27,7 +27,7 @@
                     "outputs": {
                         "deployed": {
                             "type": "string",
-                            "value": "deployed to sub"
+                            "value": "[subscription().displayName]"
                         }
                     }
                 }
