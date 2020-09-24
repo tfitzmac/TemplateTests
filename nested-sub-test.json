@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subID": {
+            "type": "string"
+        }
+    },
+    "variables": {
+    },
+    "resources": [
+        {
+            "name": "nested",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "subscriptionId": "[parameters('subID')]",
+            "location": "eastus",
+            "properties": {
+                "expressionEvaluationOptions": {
+                    "scope": "inner"
+                },
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": [],
+                    "outputs": {
+                        "deployed": {
+                            "type": "string",
+                            "value": "deployed to sub"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "innerOutput": {
+            "type": "string",
+            "value": "[reference('nested').outputs.deployed.value]"
+        }
+    }
+}
